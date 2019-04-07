@@ -20,13 +20,21 @@
         <h1>Alterar conta de usuário </h1>
         <form action="controle" method="post">
             <input type="hidden" name="acao" value="AlterarConta" />
-            <input type="hidden" name="subacao" value="comum" />
-            <input type="hidden" name="subsubacao" value="comum" />
+            <input type="hidden" name="subacao" value="moderador" />
+            <input type="hidden" name="subsubacao" value="moderador" />
             <input type="hidden" name="codigo_usuario" value="${user.codigo}" />
             <p>
             Número da Inscrição: <input type="text" name="inscricao" value="${user.inscricao}"/>
             </p><p>
             Nome: <input type="text" name="nome" value="${user.nome}" /><br />
+             
+            </p><p>
+                Tipo de Usuário:
+                <select name="tipo">                     
+                    <option value="Aluno" >Aluno</option>
+                    <option value="Avaliador">Avaliador</option>
+                    <option value="Moderador" >Moderador</option>
+                </select>
             </p><p>
             E-mail:<input type="text" name="email" value="${user.email}"/><br />
             </p><p>

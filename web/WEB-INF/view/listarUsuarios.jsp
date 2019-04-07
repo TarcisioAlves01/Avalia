@@ -26,9 +26,8 @@
 			
 			<li>
                             ID: ${usuario.codigo} Nome: ${usuario.nome} Inscrição: ${usuario.inscricao} Tipo: ${usuario.tipo} E-mail: ${usuario.email}                                      
-                            <a href="/Avalia/controle?acao=AlterarUsuario&codigo=${usuario.codigo}" class="btn btn-primary btn-sm">Alterar</a>
-                            <a href="/Avalia/controle?acao=RemoverUsuario&codigo=${usuario.codigo}" class="btn btn-danger btn-sm">Deletar</a>
-                                    
+                            <a href="/Avalia/controle?acao=AlterarUsuario&codigo_solitante=${usuario.solicitante}&tipo_solitante=${usuario.tipoSolicitante}&codigo_usuario=${usuario.codigo}&subacao=solicitar">Alterar</a>                          
+                                      
 			</li>
 		</c:forEach>
 	</ul>

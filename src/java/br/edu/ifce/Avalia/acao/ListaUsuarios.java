@@ -14,9 +14,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class ListaUsuarios implements Acao{
+    
     public String executa(HttpServletRequest request, HttpServletResponse response) {
         Banco banco = new Banco();
         List<Usuario> listUser = new ArrayList<>();
+        String solicitante = request.getParameter("codigo");
+        String tipoDeSolicitante = request.getParameter("tipo");
         try {
             banco.conectar();
             PreparedStatement pst = banco.con.prepareStatement("select * from tbl_usuarios");
@@ -29,6 +32,8 @@ public class ListaUsuarios implements Acao{
                 user.setInscricao(banco.rs.getString("inscricao"));
                 user.setTipo(banco.rs.getString("tipo"));
                 user.setEmail(banco.rs.getString("email"));
+                user.setSolicitante(solicitante);
+                user.setTipoSolicitante(tipoDeSolicitante);
                 listUser.add(user);							
             }            
         } catch (SQLException e) {

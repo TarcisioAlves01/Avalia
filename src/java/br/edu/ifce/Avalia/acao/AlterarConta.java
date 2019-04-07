@@ -62,6 +62,7 @@ public class AlterarConta implements Acao{
        
             
         Usuario user2 = new Usuario();
+        user2.setCodigo(Integer.parseInt(codigo));
         user2.setNome(request.getParameter("nome"));
         user2.setInscricao(request.getParameter("inscricao"));
         user2.setTipo(request.getParameter("tipo"));
@@ -72,14 +73,20 @@ public class AlterarConta implements Acao{
         if(user2.getInscricao().equals("") || user2.getNome().equals("") || user2.getEmail().equals("") || user2.getSenha().equals("") ||user2.getSenha2().equals("")){
             user2.setAlerta("Confira se os campos estão preenchidos corretamente");
             request.setAttribute("user", user2);
+            if (subsubacao.equals("moderador")){
+                return "forward:form_AuterausuarioModerador.jsp";
+            }
             return "forward:form_AuterausuarioComum.jsp";
         }else if(!user2.getSenha().equals(user2.getSenha2())){
             user2.setAlerta("As senhas não estão iguais, certifique-se!");
             request.setAttribute("user", user2);
+            if (subsubacao.equals("moderador")){
+                return "forward:form_AuterausuarioModerador.jsp";
+            }
             return "forward:form_AuterausuarioComum.jsp";
         }else{
 
-            if(subsubacao.equals("comum") && subacao.equals("comum")){
+            if(subsubacao.equals("comum")){
                 try {
                     banco.conectar();
                     PreparedStatement pst = banco.con.prepareStatement("UPDATE tbl_usuarios SET nome = ?, inscricao = ?, email = ?, senha = ? WHERE codigo = ?");

@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.edu.ifce.Avalia.modelo;
 
 /**
@@ -5,13 +10,31 @@ package br.edu.ifce.Avalia.modelo;
  * @author Tarcisio Alves
  */
 public class Usuario {
-        private int codigo;	
+     private int codigo;	
 	private String nome;	
 	private String inscricao;
 	private String tipo;
 	private String email;
 	private String senha;
         private String senha2;
+        private String solicitante;
+        private String tipoSolicitante;
+
+        public String getSolicitante() {
+            return solicitante;
+        }
+
+        public void setSolicitante(String solicitante) {
+            this.solicitante = solicitante;
+        }
+
+        public String getTipoSolicitante() {
+            return tipoSolicitante;
+        }
+
+        public void setTipoSolicitante(String tipoSolicitante) {
+            this.tipoSolicitante = tipoSolicitante;
+        }
 
         public String getSenha2() {
             return senha2;
@@ -65,6 +88,6 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
+}
     
 }
