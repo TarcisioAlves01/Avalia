@@ -22,8 +22,8 @@
 <a href="/Avalia/controle?acao=ListaUsuarios">Lista Contas</a> | 
 </c:if>
 <a href="/Avalia/controle?acao=SolicitarNovoArtigo&codigo_usuario=${user.codigo}">Enviar novo artigo</a> | 
-<a href="/Avalia/controle?acao=ListarArtigos&codigo_usuario=${user.codigo}&tipo=${user.tipo}">Artigos publicados</a>
-<a href="/Avalia/controle?acao=AlterarConta&codigo_usuario=${user.codigo}">Minha conta</a> | 
+<a href="/Avalia/controle?acao=ListarArtigos&codigo_usuario=${user.codigo}&tipo=${user.tipo}">Artigos publicados</a> | 
+<a href="/Avalia/controle?acao=AlterarConta&subacao=solicitar&codigo_usuario=${user.codigo}&tipoDeusuario=${user.tipo}">Minha conta</a>  
 
 
 
