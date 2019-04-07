@@ -18,6 +18,7 @@
 </head>
 <h1>Olá senhor(a) ${user.nome }, escolha uma função </h1>
 <a href="/Avalia/controle?acao=Home&codigo_usuario=${user.codigo}">Home</a> | 
+
 <c:if test ="${user.tipo.equals('Moderador')}">
 <a href="/Avalia/controle?acao=ListaUsuarios&codigo=${user.codigo}&tipo=${user.tipo}">Lista Contas</a> |
 </c:if>

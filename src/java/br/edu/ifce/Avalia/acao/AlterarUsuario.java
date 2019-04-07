@@ -40,11 +40,15 @@ public class AlterarUsuario implements Acao{
         user2.setInscricao(request.getParameter("inscricao"));
         user2.setTipo(request.getParameter("tipo"));
         user2.setEmail(request.getParameter("email"));
+        user2.setSolicitante(solicitante);
+        user2.setTipoSolicitante(tipoDeSolicitante);
         user2.setSenha(request.getParameter("senha1"));
         user2.setSenha2(request.getParameter("senha2"));
         
         if(user2.getInscricao().equals("") || user2.getNome().equals("") || user2.getEmail().equals("") || user2.getSenha().equals("") ||user2.getSenha2().equals("")){            user2.setAlerta("Confira se os campos estão preenchidos corretamente");
-            
+            user2.setAlerta("Certifique-se que os comapos estão preenchidos corretamente!");
+            request.setAttribute("user", user2);            
+            return "forward:alterarUsuario.jsp";
         }else if(!user2.getSenha().equals(user2.getSenha2())){
             user2.setAlerta("As senhas não estão iguais, certifique-se!");
             request.setAttribute("user", user2);            

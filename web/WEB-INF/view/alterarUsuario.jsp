@@ -18,7 +18,6 @@
     </head>
     <body>
         <h1>Alterar conta do usuário ${user.nome}</h1>
-        ${user.solicitante} <br/>
         <form action="controle" method="post">
             <input type="hidden" name="acao" value="AlterarUsuario" />
             <input type="hidden" name="subacao" value="alterar" />
