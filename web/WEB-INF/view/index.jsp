@@ -17,13 +17,13 @@
 <head>
 </head>
 <h1>Olá senhor(a) ${user.nome }, escolha uma função </h1>
-<a href="/Avalia/controle?acao=home&codigo_usuario=${user.codigo}">Home</a> | 
+<a href="/Avalia/controle?acao=Home&codigo_usuario=${user.codigo}">Home</a> | 
 <c:if test ="${user.tipo.equals('Moderador')}">
 <a href="/Avalia/controle?acao=ListaUsuarios">Lista Contas</a> | 
 </c:if>
 <a href="/Avalia/controle?acao=SolicitarNovoArtigo&codigo_usuario=${user.codigo}">Enviar novo artigo</a> | 
 <a href="/Avalia/controle?acao=ListarArtigos&codigo_usuario=${user.codigo}&tipo=${user.tipo}">Artigos publicados</a>
-<a href="/Avalia/controle?acao=Conta&codigo_usuario=${user.codigo}">Minha conta</a> | 
+<a href="/Avalia/controle?acao=AlterarConta&codigo_usuario=${user.codigo}">Minha conta</a> | 
 
 
 
