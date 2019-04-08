@@ -43,17 +43,17 @@ public class ControleArtigo {
     }
     public void alterar(Artigo artigo){
         try {
-                banco.conectar();
-                PreparedStatement pst = banco.con.prepareStatement("UPDATE tbl_artigo SET titulo = ?, nomeDoarquivo = ?, arquivo = ? WHERE codigo = ?");
-                pst.setString(1, artigo.getTitulo());
-                pst.setString(2, artigo.getNomeDoarquivo());
-                pst.setBytes(3, artigo.getArquivo()); 
-                pst.setInt(4, artigo.getCodigo());
-                pst.execute();			            
+            banco.conectar();
+            PreparedStatement pst = banco.con.prepareStatement("UPDATE tbl_artigo SET titulo = ?, nomeDoarquivo = ?, arquivo = ? WHERE codigo = ?");
+            pst.setString(1, artigo.getTitulo());
+            pst.setString(2, artigo.getNomeDoarquivo());
+            pst.setBytes(3, artigo.getArquivo()); 
+            pst.setInt(4, artigo.getCodigo());
+            pst.execute();			            
 
-            } catch (SQLException ex) {
-                System.out.println("Error ao tentar atualizaros dados no banco: \n"+ex.getMessage());
-            }
+        } catch (SQLException ex) {
+            System.out.println("Error ao tentar atualizaros dados no banco: \n"+ex.getMessage());
+        }
     }
     //O metodo converte um arquivo em byte e retorna um tipo byte
     public byte[] fileToByteArray(File arquivo){

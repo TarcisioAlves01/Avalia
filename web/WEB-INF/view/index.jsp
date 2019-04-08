@@ -19,11 +19,15 @@
 <h1>Olá senhor(a) ${user.nome }, escolha uma função </h1>
 <a href="/Avalia/controle?acao=Home&codigo_usuario=${user.codigo}">Home</a> | 
 
+<a href="/Avalia/controle?acao=Kanban&subacao=listar&codigo_usuario=${user.codigo}&tipo_usuario=${user.tipo}">Kanban</a> |
+
 <c:if test ="${user.tipo.equals('Moderador')}">
 <a href="/Avalia/controle?acao=ListaUsuarios&codigo=${user.codigo}&tipo=${user.tipo}">Lista Contas</a> |
 </c:if>
+<c:if test ="${user.tipo.equals('Moderador') || user.tipo.equals('Aluno') }">
 <a href="/Avalia/controle?acao=SolicitarNovoArtigo&codigo_usuario=${user.codigo}">Enviar novo artigo</a> | 
 <a href="/Avalia/controle?acao=ListarArtigos&codigo_usuario=${user.codigo}&tipo=${user.tipo}">Artigos publicados</a> | 
+</c:if>
 <a href="/Avalia/controle?acao=AlterarConta&subacao=solicitar&codigo_usuario=${user.codigo}&tipoDeusuario=${user.tipo}">Minha conta</a>  
 
 
