@@ -1,4 +1,4 @@
-package br.edu.ifce.Avalia.acao;
+package br.edu.ifce.Avalia.modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

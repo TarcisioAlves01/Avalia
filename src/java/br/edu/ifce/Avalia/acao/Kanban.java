@@ -5,6 +5,7 @@
  */
 package br.edu.ifce.Avalia.acao;
 
+import br.edu.ifce.Avalia.modelo.Banco;
 import br.edu.ifce.Avalia.modelo.Artigo;
 import br.edu.ifce.Avalia.modelo.Usuario;
 import java.sql.PreparedStatement;

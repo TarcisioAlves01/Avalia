@@ -5,6 +5,7 @@
  */
 package br.edu.ifce.Avalia.acao;
 
+import br.edu.ifce.Avalia.modelo.Banco;
 import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
