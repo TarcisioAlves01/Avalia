@@ -165,7 +165,7 @@
                     <th>Fase</th>
                     <th>Publicado</th>
                     <th>Deletar</th>
-                    <th>Alternar</th>
+                    <th>Disponibilizar</th>
                     <th>Baixar</th>
                   </tr>
                 </thead>
@@ -181,7 +181,7 @@
                       
                       <td>
                           <div class="text-center">
-                                <c:if test ="${artigo.fase == '1' && artigo.tipo == 'Moderador'}">
+                                <c:if test ="${(artigo.fase == '1') || (artigo.tipo == 'Moderador')}">
                                     <a class="btn btn-primary btn-danger" href="/Avalia/controle?acao=DeletarArtigo&codigo_artigo=${artigo.codigo}&nomeArquivo=${artigo.nomeDoarquivo}&codigo_usuario=${artigo.dono}&tipo_usuario=${artigo.tipo}">-</a>
                                 </c:if>
                           </div>
@@ -189,7 +189,7 @@
                       
                       <td>
                           <div class="text-center">
-                                <c:if test ="${(artigo.fase == '1') && (artigo.tipo == 'Moderador')}">
+                                <c:if test ="${(artigo.fase == '1') && ((artigo.dono == artigo.solicitante) || (artigo.tipo == 'Moderador')) }">
                                   <a class="btn btn-primary btn-group" href="/Avalia/controle?acao=DisponibilizarParaAvaliacao&codigo_artigo=${artigo.codigo}&nomeArquivo=${artigo.nomeDoarquivo}&codigo_usuario=${artigo.dono}&tipo_usuario=${artigo.tipo}">▁ ▂ ▃</a>
                                </c:if>
                           </div>
