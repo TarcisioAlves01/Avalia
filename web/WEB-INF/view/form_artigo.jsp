@@ -21,7 +21,7 @@
 </head>
 
 <body>
-          <h3>Envio do trabalho acadêmico ${user.codigo}</h3>
+          <h3>Envio do trabalho acadêmico</h3>
           <br/>
           
           <form method="post" action="controle" enctype="multipart/form-data">

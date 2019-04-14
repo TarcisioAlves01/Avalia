@@ -41,6 +41,10 @@ public class PegarUsuario {
             }
         return user;
     }
+
+    Usuario getUsuario(int codigo_usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    
     

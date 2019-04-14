@@ -144,6 +144,7 @@ public class ControleArtigo {
                 artigo.setDataAvaliacao(banco.rs.getString("dataAvaliacao"));
                 artigo.setDono(banco.rs.getInt("dono"));
                 artigo.setSolicitante(solicitante);
+                artigo.setAvaliandoPor(banco.rs.getInt("avaliandoPor"));
                 artigo.setTipo(tipo);
                 listArtigo.add(artigo);							
             }

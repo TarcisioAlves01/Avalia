@@ -27,24 +27,9 @@
 			<c:if test ="${artigo.solicitante == artigo.dono || artigo.tipo == 'Moderador' }">
 			<li>                            
                             
-                            ID: ${artigo.codigo} Título: ${artigo.titulo} Nome do Arquivo: ${artigo.nomeDoarquivo} Fase: 
-                            
-                            <c:if test ="${artigo.fase == '1' }">
-                                Ocioso
-                            </c:if>
-                            <c:if test ="${artigo.fase == '2' }">
-                                Fila de avaliação
-                            </c:if>
-                            <c:if test ="${artigo.fase == '3' }">
-                                Sendo avaliado
-                            </c:if>
-                            <c:if test ="${artigo.fase == '3' }">
-                                Avaliado
-                            </c:if>   
-                            
-                            Publicado em: ${artigo.dataPublic}                                      
+                            ID: ${artigo.codigo} Título: ${artigo.titulo} Publicado em: ${artigo.dataPublic}                                      
                             <a href="/Avalia/controle?acao=AlterarArtigo&codigo_artigo=${artigo.codigo}&subacao=solicitar&codigo_usuario=${artigo.solicitante}&tipo_usuario=${artigo.tipo}">Alterar</a>
-                            <c:if test ="${artigo.fase == '1' }">
+                            <c:if test ="${artigo.fase == '1' && artigo.tipo == 'Moderador'}">
                                 <a href="/Avalia/controle?acao=DeletarArtigo&codigo_artigo=${artigo.codigo}&nomeArquivo=${artigo.nomeDoarquivo}&codigo_usuario=${artigo.dono}&tipo_usuario=${artigo.tipo}">Deletar</a>
                                 <a href="/Avalia/controle?acao=DisponibilizarParaAvaliacao&codigo_artigo=${artigo.codigo}&nomeArquivo=${artigo.nomeDoarquivo}&codigo_usuario=${artigo.dono}&tipo_usuario=${artigo.tipo}">Disponibiliazar para avaliação</a>
                             </c:if>

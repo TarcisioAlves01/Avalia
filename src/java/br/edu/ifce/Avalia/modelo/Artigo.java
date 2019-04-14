@@ -12,9 +12,18 @@ public class Artigo {
     private int fase;
     private String dataPublic;
     private String dataAvaliacao;
-    private int dono;
+    private int avaliandoPor;
+     private int dono;
     private int solicitante;
     private String tipo;
+
+    public int getAvaliandoPor() {
+        return avaliandoPor;
+    }
+
+    public void setAvaliandoPor(int avaliandoPor) {
+        this.avaliandoPor = avaliandoPor;
+    }   
 
     public String getTipo() {
         return tipo;

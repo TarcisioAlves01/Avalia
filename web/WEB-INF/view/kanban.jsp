@@ -27,7 +27,7 @@
 			
 			<li>                            
                             
-                            ID: ${artigo.codigo} Título: ${artigo.titulo} Publicado em: ${artigo.dataPublic}  |   
+                           Tipo: ${artigo.tipo} ID: ${artigo.codigo} Título: ${artigo.titulo} Publicado em: ${artigo.dataPublic}  |   
                             <c:if test ="${artigo.tipo == 'Avaliador' }">
                                 <a href="/Avalia/controle?acao=Kanban&subacao=2&codigo_artigo=${artigo.codigo}&codigo_usuario=${artigo.solicitante}">Avaliar</a> | 
                             </c:if> 
@@ -44,9 +44,13 @@
                     <c:if test ="${artigo.fase == '3' }">
 			
 			<li>                            
-                            
                             ID: ${artigo.codigo} Título: ${artigo.titulo} Nome do Arquivo: ${artigo.nomeDoarquivo} Publicado em: ${artigo.dataPublic}                                      
                             
+                            <c:if test ="${(artigo.tipo == 'Avaliador') && (artigo.solicitante == artigo.avaliandoPor)}">
+                                
+                                <a href="/Avalia/controle?acao=Kanban&subacao=3&codigo_artigo=${artigo.codigo}&codigo_usuario=${artigo.solicitante}">Dá nota</a> | 
+                            
+                            </c:if>
                             <a href="/web/arquivos/${artigo.nomeDoarquivo}" target="_blank">Baixar</a>        
 			</li>
                   </c:if>     
