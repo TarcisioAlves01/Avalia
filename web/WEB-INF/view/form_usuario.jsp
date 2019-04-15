@@ -37,6 +37,7 @@
         <form action="controle" method="post">
             <input type="hidden" name="acao" value="NovoUsuario" />
             <input type="hidden" name="subacao" value="novo" />
+            
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">

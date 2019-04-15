@@ -123,8 +123,10 @@
           <a class="dropdown-item" href="forgot-password.html">Logout</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-        </div>
+          <c:if test ="${user.tipo.equals('Aluno')}">
+            <a class="dropdown-item" href="/Avalia/controle?acao=SolicitarNovoArtigo&codigo_usuario=${user.codigo}">Enviar trabalho</a>
+          </c:if>
+          </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/Avalia/controle?acao=Kanban&subacao=listar&codigo_usuario=${user.codigo}&tipo_usuario=${user.tipo}">
