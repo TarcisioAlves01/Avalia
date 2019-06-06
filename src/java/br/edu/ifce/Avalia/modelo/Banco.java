@@ -16,7 +16,7 @@ public class Banco {
     private String driver = "com.mysql.jdbc.Driver";
     private String caminho = "jdbc:mysql://localhost:3306/Avalia?useSSL=false";//?useSSL=false
     private String usuario = "root";
-    private String senha = "es12t13o2";
+    private String senha = "";
     public Connection con;
     
     public void conectar(){     
